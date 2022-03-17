@@ -15,7 +15,7 @@ end
 
 do
     local t = f:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
-    t:SetText("Отчет")
+    t:SetText(L["Feedback"] .. "  farmer1992@gmail.com")
     t:SetPoint("TOPLEFT", f, 20, -50)
 end
 

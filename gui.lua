@@ -301,8 +301,8 @@ function GUI:Init()
     -- bid
     do
         local bf = CreateFrame("Frame", nil, f, BackdropTemplateMixin and "BackdropTemplate" or nil)
-        bf:SetWidth(290)
-        bf:SetHeight(400)
+        bf:SetWidth(420)
+        bf:SetHeight(360)
         bf:SetBackdrop({
             bgFile = "Interface\\FrameGeneral\\UI-Background-Marble",
             edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
@@ -510,15 +510,83 @@ function GUI:Init()
                 tooltip:SetOwner(UIParent, "ANCHOR_NONE")
             end)
 
-
             s:SetValue(100)
 
             bf.startprice = s
+
+            local b = CreateFrame("Button", nil, bf, "GameMenuButtonTemplate")
+                b:SetWidth(50)
+                b:SetHeight(25)
+                b:SetPoint("TOPLEFT", 20, -145)
+                b:SetText("100")
+                b:SetScript("OnClick", function()
+                    s:SetValue(100)
+            		bf.startprice = s
+                end)
+
+            local b = CreateFrame("Button", nil, bf, "GameMenuButtonTemplate")
+                b:SetWidth(50)
+                b:SetHeight(25)
+                b:SetPoint("TOPLEFT", 70, -145)
+                b:SetText("250")
+                b:SetScript("OnClick", function()
+                    s:SetValue(250)
+            		bf.startprice = s
+                end)
+
+            local b = CreateFrame("Button", nil, bf, "GameMenuButtonTemplate")
+                b:SetWidth(50)
+                b:SetHeight(25)
+                b:SetPoint("TOPLEFT", 120, -145)
+                b:SetText("500")
+                b:SetScript("OnClick", function()
+                    s:SetValue(500)
+            		bf.startprice = s
+                end)
+
+            local b = CreateFrame("Button", nil, bf, "GameMenuButtonTemplate")
+                b:SetWidth(50)
+                b:SetHeight(25)
+                b:SetPoint("TOPLEFT", 170, -145)
+                b:SetText("750")
+                b:SetScript("OnClick", function()
+                    s:SetValue(750)
+            		bf.startprice = s
+                end)
+
+            local b = CreateFrame("Button", nil, bf, "GameMenuButtonTemplate")
+                b:SetWidth(60)
+                b:SetHeight(25)
+                b:SetPoint("TOPLEFT", 220, -145)
+                b:SetText("1000")
+                b:SetScript("OnClick", function()
+                    s:SetValue(1000)
+            		bf.startprice = s
+                end)
+            local b = CreateFrame("Button", nil, bf, "GameMenuButtonTemplate")
+                b:SetWidth(60)
+                b:SetHeight(25)
+                b:SetPoint("TOPLEFT", 280, -145)
+                b:SetText("1500")
+                b:SetScript("OnClick", function()
+                    s:SetValue(1500)
+            		bf.startprice = s
+                end)
+
+            local b = CreateFrame("Button", nil, bf, "GameMenuButtonTemplate")
+                b:SetWidth(60)
+                b:SetHeight(25)
+                b:SetPoint("TOPLEFT", 340, -145)
+                b:SetText("2000")
+                b:SetScript("OnClick", function()
+                    s:SetValue(2000)
+            		bf.startprice = s
+                end)
         end
 
         do
             local l = bf:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-            l:SetPoint("TOPLEFT", bf, 20, -200)
+            l:SetPoint("TOPLEFT", bf, 20, -185)
             l:SetText(L["Bid mode"])
 
             local usegold
@@ -575,7 +643,7 @@ function GUI:Init()
 
             do
                 local b = CreateFrame("CheckButton", nil, bf, "UICheckButtonTemplate")
-                b:SetPoint("TOPLEFT", bf, 30 + l:GetStringWidth(), -190)
+                b:SetPoint("TOPLEFT", bf, 30 + l:GetStringWidth(), -175)
         
                 b.text = b:CreateFontString(nil, "OVERLAY", "GameFontNormal")
                 b.text:SetPoint("LEFT", b, "RIGHT", 0, 1)
@@ -591,7 +659,7 @@ function GUI:Init()
                     s:SetOrientation('HORIZONTAL')
                     s:SetHeight(14)
                     s:SetWidth(160)
-                    s:SetMinMaxValues(10, 500)
+                    s:SetMinMaxValues(10, 1000)
                     s:SetValueStep(10)
                     s:SetObeyStepOnDrag(true)
                     s.Low:SetText(GOLD_AMOUNT_TEXTURE_STRING:format(10))
@@ -603,7 +671,7 @@ function GUI:Init()
 
                     bf:SetWidth(math.max(bf:GetWidth(), l:GetStringWidth() + 220))
         
-                    s:SetPoint("TOPLEFT", bf, 40 + l:GetStringWidth(), -240)
+                    s:SetPoint("TOPLEFT", bf, 40 + l:GetStringWidth(), -225)
         
                     s:SetScript("OnValueChanged", function(self, value)
                         value = math.floor(value)
@@ -632,12 +700,61 @@ function GUI:Init()
                     s:Hide()
         
                     b.slide = s
+
+		            local b = CreateFrame("Button", nil, bf, "GameMenuButtonTemplate")
+		                b:SetWidth(50)
+		                b:SetHeight(25)
+		                b:SetPoint("TOPLEFT", 100, -250)
+		                b:SetText("10")
+		                b:SetScript("OnClick", function()
+		                    s:SetValue(10)
+		            		bf.startprice = s
+		                end)
+
+		            local b = CreateFrame("Button", nil, bf, "GameMenuButtonTemplate")
+		                b:SetWidth(50)
+		                b:SetHeight(25)
+		                b:SetPoint("TOPLEFT", 150, -250)
+		                b:SetText("50")
+		                b:SetScript("OnClick", function()
+		                    s:SetValue(50)
+		            		bf.startprice = s
+		                end)
+
+		            local b = CreateFrame("Button", nil, bf, "GameMenuButtonTemplate")
+		                b:SetWidth(50)
+		                b:SetHeight(25)
+		                b:SetPoint("TOPLEFT", 200, -250)
+		                b:SetText("100")
+		                b:SetScript("OnClick", function()
+		                    s:SetValue(100)
+		            		bf.startprice = s
+		                end)
+
+		            local b = CreateFrame("Button", nil, bf, "GameMenuButtonTemplate")
+		                b:SetWidth(50)
+		                b:SetHeight(25)
+		                b:SetPoint("TOPLEFT", 250, -250)
+		                b:SetText("500")
+		                b:SetScript("OnClick", function()
+		                    s:SetValue(500)
+		            		bf.startprice = s
+		                end)
+		            local b = CreateFrame("Button", nil, bf, "GameMenuButtonTemplate")
+		                b:SetWidth(60)
+		                b:SetHeight(25)
+		                b:SetPoint("TOPLEFT", 300, -250)
+		                b:SetText("1000")
+		                b:SetScript("OnClick", function()
+		                    s:SetValue(1000)
+		            		bf.startprice = s
+		                end)
                 end                
             end
 
             do
                 local b = CreateFrame("CheckButton", nil, bf, "UICheckButtonTemplate")
-                b:SetPoint("TOPLEFT", bf, 90 + l:GetStringWidth(), -190)
+                b:SetPoint("TOPLEFT", bf, 90 + l:GetStringWidth(), -175)
         
                 b.text = b:CreateFontString(nil, "OVERLAY", "GameFontNormal")
                 b.text:SetPoint("LEFT", b, "RIGHT", 0, 1)
@@ -661,7 +778,7 @@ function GUI:Init()
                     l:SetPoint("RIGHT", s, "LEFT", -20, 1)
                     l:SetText(L["Bid increment"])
         
-                    s:SetPoint("TOPLEFT", bf, 40 + l:GetStringWidth(), -240)
+                    s:SetPoint("TOPLEFT", bf, 40 + l:GetStringWidth(), -225)
         
                     s:SetScript("OnValueChanged", function(self, value)
                         value = math.floor(value)
@@ -680,7 +797,7 @@ function GUI:Init()
 
         do
             local b = CreateFrame("CheckButton", nil, bf, "UICheckButtonTemplate")
-            b:SetPoint("TOPLEFT", bf, 15, -270)
+            b:SetPoint("TOPLEFT", bf, 15, -280)
     
             b.text = b:CreateFontString(nil, "OVERLAY", "GameFontNormal")
             b.text:SetPoint("LEFT", b, "RIGHT", 0, 1)

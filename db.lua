@@ -61,7 +61,6 @@ function db:NewLedger()
     table.insert( ledgers, {
         ["time"] = time(),
         ["items"] = {},
-        ["trade_info"] = {},
     } )
 
     while(#ledgers > MAX_LEDGER_COUNT) do
@@ -123,7 +122,6 @@ function db:AddEntry(type, detail, beneficiary, cost, costtype)
 
     self:OnLedgerItemsChange()
 end
-
 
 function db:RemoveEntry(idx)
     local ledger = self:GetCurrentLedger()
