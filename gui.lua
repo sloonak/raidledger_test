@@ -510,19 +510,6 @@ function GUI:Init()
                 tooltip:SetOwner(UIParent, "ANCHOR_NONE")
             end)
 
-            do
-                local b = CreateFrame("Button", nil, bf, "GameMenuButtonTemplate")
-                b:SetWidth(50)
-                b:SetHeight(22)
-                b:SetPoint("TOPLEFT", 40, -160)
-                b:SetText("100")
-
-                b:SetScript("OnClick", function() 
-                    s:SetValue(100)
-                    bf.startprice = s
-                end)
-            end
-
 
             s:SetValue(100)
 
